@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c8d4ab15.chunk.css",
+    "main.js": "/static/js/main.0a736393.chunk.js",
+    "main.js.map": "/static/js/main.0a736393.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.bd960bc3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.bd960bc3.js.map",
+    "static/js/2.5ece636d.chunk.js": "/static/js/2.5ece636d.chunk.js",
+    "static/js/2.5ece636d.chunk.js.map": "/static/js/2.5ece636d.chunk.js.map",
+    "static/js/3.a8526d3b.chunk.js": "/static/js/3.a8526d3b.chunk.js",
+    "static/js/3.a8526d3b.chunk.js.map": "/static/js/3.a8526d3b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.c8d4ab15.chunk.css.map": "/static/css/main.c8d4ab15.chunk.css.map",
+    "static/js/2.5ece636d.chunk.js.LICENSE.txt": "/static/js/2.5ece636d.chunk.js.LICENSE.txt",
+    "static/media/child-icon1.00abaa80.png": "/static/media/child-icon1.00abaa80.png",
+    "static/media/child-icon2.2228ea18.png": "/static/media/child-icon2.2228ea18.png",
+    "static/media/child-icon3.0d95d68d.png": "/static/media/child-icon3.0d95d68d.png",
+    "static/media/child-icon4.ac91f200.png": "/static/media/child-icon4.ac91f200.png",
+    "static/media/child-icon5.1199b969.png": "/static/media/child-icon5.1199b969.png",
+    "static/media/smart-school.b5ae4b3f.png": "/static/media/smart-school.b5ae4b3f.png",
+    "static/media/virtual-pre-school.26876cac.png": "/static/media/virtual-pre-school.26876cac.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bd960bc3.js",
+    "static/js/2.5ece636d.chunk.js",
+    "static/css/main.c8d4ab15.chunk.css",
+    "static/js/main.0a736393.chunk.js"
+  ]
+}
