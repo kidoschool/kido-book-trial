@@ -45,7 +45,7 @@ class ParentDetail extends Component {
                                     <span className="text-danger"><small>{this.props.emailError}</small></span>
                                 </div>
                             </div>
-                            <button type="submit" onClick={this.props.next} className="btn btn-primary">Submit</button>
+                            <button type="submit" onClick={this.props.next} className="btn btn-primary float-right">Submit</button>
                         </div>
                     </div>
                 </section>

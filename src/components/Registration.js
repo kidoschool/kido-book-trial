@@ -24,23 +24,12 @@ class Registration extends Component {
 
             childfname: '',
             childlname: '',
-            child1: '',
-            child2: '',
-            child3: '',
-            child4: '',
-            child5: '',
+            selectedChildage: false,
             dateofbirth: '',
             dateofbirthError: '',
 
-            virtualpreschool: '',
-            smartkitschool: '',
+            selectedLearning: false,
 
-            // country: '',
-            // countryError: '',
-            // postcode: '',
-            // postcodeError: '',
-            // terms: false,
-            // termsError: ''
         }
         
     }
@@ -55,13 +44,9 @@ class Registration extends Component {
             phoneError: '',
 
             dateofbirthError: '',
-            // confirmError: '',
 
-            // forenameError: '',
-            // surnameError: '',
-            // usernameError: '',
-
-            // termsError: ''
+            selectedLearningError: '',
+        
         }
 
         if(this.state.parentfname.length < 1){
@@ -74,7 +59,7 @@ class Registration extends Component {
             errors.parentlnameError = 'Last Name cannot be blank';
         }
 
-        if(this.state.phone.length <= 9){
+        if(this.state.phone.length !== 10){
             isError = true;
             errors.phoneError = 'Phone Number must be 10 digit only';
         }
@@ -87,22 +72,15 @@ class Registration extends Component {
         if(this.state.step > 1){
             if(this.state.dateofbirth.length < 1){
                 isError = true;
-                errors.dateofbirthError = 'Plese Select Date of Birth';
+                errors.dateofbirthError = 'Plese Select Proper Date of Birth';
             }
         }
 
         if(this.state.step > 2){
-            // if(this.state.terms === false){
-            //     isError = true;
-            //     errors.termsError = 'Please accept the Terms and Conditions by ticking the checkbox';
-            // }
-        }
-
-        if(this.state.step > 3){
-            // if(this.state.terms === false){
-            //     isError = true;
-            //     errors.termsError = 'Please accept the Terms and Conditions by ticking the checkbox';
-            // }
+            if(this.state.selectedLearning === false){
+                isError = true;
+                errors.selectedLearningError = 'Please Select any one learning option';
+            }
         }
 
         this.setState({
@@ -114,6 +92,7 @@ class Registration extends Component {
     }
 
     next(){
+
         const err = this.validate()
         if(!err){
             this.setState({
@@ -125,13 +104,12 @@ class Registration extends Component {
                 emailError: '',
 
                 dateofbirthError: '',
-                // confirmError: '',
 
-                // forenameError: '',
-                // surnameError: '',
-                // usernameError: '',
+                selectedLearningError: '',
+
             })
         }
+
     }
 
     prev(){
@@ -141,10 +119,20 @@ class Registration extends Component {
         }
     }
 
+    prev1(){
+        this.setState({step:this.state.step - 1})
+    }
+
     handleOnChange(e){
         this.setState({[e.target.id]: e.target.value})
-        // this.setState({[e.target.id]: !this.state.virtualpreschool})
-        // this.setState({[e.target.id]: !this.state.smartkitschool})
+    }
+
+    handleOnCheck(e){
+        this.setState({selectedChildage: e.target.value});
+    }
+
+    handleOnSelect(e){
+        this.setState({selectedLearning: e.target.value});
     }
 
     render() {
@@ -170,25 +158,24 @@ class Registration extends Component {
                 <ChildDetail
                    childfname={this.state.childfname}
                    childlname={this.state.childlname}
-                   child1={this.state.child1}
-                   child2={this.state.child2}
-                   child3={this.state.child3}
-                   child4={this.state.child4}
-                   child5={this.state.child5}
+                   selectedChildage={this.state.selectedChildage}
                    dateofbirth={this.state.dateofbirth}
                    dateofbirthError={this.state.dateofbirthError}
                    onChange={this.handleOnChange.bind(this)}
+                   onCheck={this.handleOnCheck.bind(this)}
                    next={this.next.bind(this)}
-                   prev={this.prev.bind(this)}/>
+                   prev={this.prev.bind(this)}
+                   prev1={this.prev1.bind(this)}/>
                 </div>
           case 3:
             return <div>
                 <Steps step={this.state.step}/>
                 <LearningOptions
-                   virtualpreschool={this.state.virtualpreschool}
-                   smartkitschool={this.state.smartkitschool}
+                   selectedLearning={this.state.selectedLearning}
+                   selectedLearningError={this.state.selectedLearningError}
                    childfname={this.state.childfname}
                    onChange={this.handleOnChange.bind(this)}
+                   onSelect={this.handleOnSelect.bind(this)}
                    next={this.next.bind(this)}
                    prev={this.prev.bind(this)}/>
                 </div>

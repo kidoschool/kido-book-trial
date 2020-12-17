@@ -43,7 +43,7 @@ class SelectSchool extends Component {
                         </p>
                         </div>
                         <div class="card-footer text-center">
-                        <button className="btn btn-success btn-sm" onClick={this.props.next}>Pay Now</button>
+                        <button className="btn btn-success btn-sm" onClick={this.props.next}>Book Now</button>
                         </div>
                     </div>
                     <div class="card">
@@ -60,7 +60,7 @@ class SelectSchool extends Component {
                         </p>
                         </div>
                         <div class="card-footer text-center">
-                        <button className="btn btn-warning btn-sm" onClick={this.props.next}>Pay Now</button>
+                        <button className="btn btn-warning btn-sm" onClick={this.props.next}>Book Now</button>
                         </div>
                     </div>
                     </div>

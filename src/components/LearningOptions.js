@@ -14,9 +14,10 @@ class LearningOptions extends Component {
                 <div className="form-row">
                         <div className="form-group col-md-12">
                             <div className="border shadow select-school">
-                                <input className="form-check-input" type="radio" name="school" id="virtualpreschool" 
-                                        value={this.props.virtualpreschool} 
-                                        onChange={this.props.onChange}
+                                <input className="form-check-input" type="radio" name="school" id="virtualpreschool"  
+                                        value="virtualpreschool" 
+                                        checked={this.props.selectedLearning === "virtualpreschool"} 
+                                        onChange={this.props.onSelect}
                                 />
                                 <div className="d-flex justify-content-between">
                                 <span className="text-success pr-4"><i class="fas fa-chalkboard-teacher fa-2x"></i></span>
@@ -31,8 +32,9 @@ class LearningOptions extends Component {
                         <div className="form-group col-md-12">
                             <div className="border shadow select-school">
                                 <input className="form-check-input" type="radio" name="school" id="smartkitschool" 
-                                        value={this.props.smartkitschool}
-                                        onChange={this.props.onChange}  
+                                        value="smartkitschool" 
+                                        checked={this.props.selectedLearning === "smartkitschool"} 
+                                        onChange={this.props.onSelect}  
                                 />
                                 <div className="d-flex justify-content-between">
                                 <span className="text-warning pr-4"><i class="fas fa-school fa-2x"></i></span>
@@ -43,6 +45,7 @@ class LearningOptions extends Component {
                             </div>
                         </div>
                     </div>
+                    <small className="text-danger py-2">{this.props.selectedLearningError}</small>
                     <div className="d-flex justify-content-between">
                     <button  type="submit" className="btn btn-danger" onClick={this.props.prev}>Back</button>
                     <button type="submit" onClick={this.props.next} className="btn btn-primary">Submit</button>
