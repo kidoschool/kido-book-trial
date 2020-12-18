@@ -26,10 +26,10 @@ class SelectSchool extends Component {
                         </p>
                         </div>
                         <div class="card-footer text-center">
-                        <button className="btn btn-primary btn-sm" onClick={this.props.next}>Book Now</button>
+                        <button className="btn btn-primary1 btn-sm" onClick={this.props.next}>Book Now</button>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card virtual">
                         <div className="bg-success text-center p-5"><h4 className="text-white">The Virtual Preschool  @ ₹ 4000 for the first month (50% off)</h4></div>
                         <div class="card-body">
                         <p class="card-text">
@@ -46,7 +46,7 @@ class SelectSchool extends Component {
                         <button className="btn btn-success btn-sm" onClick={this.props.next}>Book Now</button>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card smartkit">
                         <div className="bg-warning text-center p-5"><h4 className="text-white pb-4">Smart Kit Program <br/>@ ₹ 4,000 only</h4></div>
                         <div class="card-body">
                         <p class="card-text">

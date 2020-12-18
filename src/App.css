@@ -108,7 +108,26 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.free-trial:hover{
+  border: 2px solid #00356b;
+}
 
+.virtual:hover{
+  border: 2px solid #00356b;
+}
+
+.smartkit:hover{
+  border: 2px solid #00356b;
+}
+
+.btn-primary{
+  background-color: #00356b!important;
+}
+
+.btn-primary1 {
+  background-color: #007bff;
+  color:#fff
+}
 
 
 /*--------footer-area start---------*/
