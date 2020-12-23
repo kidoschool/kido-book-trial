@@ -61,10 +61,21 @@ const CreateBoard = (props) => {
                 <div className="create-group border bg-white p-4">
                 <h1 className="text-primary1">Create a Group</h1>
                 <form onSubmit={addGroupToDBHandler}>
-                    <div class="form-group">
+                    {/* <div class="form-group">
                         <label for="agegroup">Enter Child Age Group:</label>
                         <input id="agegroup" type="text" class="form-control" name="agegroup" placeholder="eg 2Years-3Years"
                         ref={AgeGroup}  onChange={(event) => setAgeGroup(event.target.value)}/>
+                    </div> */}
+                    <div class="form-group">
+                        <label for="agegroup">Enter Child Age Group:</label>
+                        <select class="form-control" name="agegroup" id="agegroup" ref={AgeGroup} onChange={(event) => setAgeGroup(event.target.value)}>
+                        <option value="">Select Age Group</option>
+                        <option value="15Months-2Years">15Months-2Years</option>
+                        <option value="2Years-3Years">2Years-3Years</option>
+                        <option value="3Years-4Years">3Years-4Years</option>
+                        <option value="4Years-5Years">4Years-5Years</option>
+                        <option value="5Years-6Years">5Years-6Years</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="teachername">Enter Teacher Names:</label>
