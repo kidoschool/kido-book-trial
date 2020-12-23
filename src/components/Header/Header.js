@@ -14,7 +14,7 @@ function Header(props){
 
           
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto w-100 justify-content-end clearfix">
+            {/* <ul className="navbar-nav mr-auto w-100 justify-content-end clearfix">
               <li className="nav-item">
                 <a className="nav-link pl-4" activeclassname="selected" href="#home">home</a>
               </li>
@@ -33,7 +33,7 @@ function Header(props){
               <li className="nav-item pl-4">
                 <a className="nav-link mainbtn" href="#contact">get it</a>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </nav>
       </header>

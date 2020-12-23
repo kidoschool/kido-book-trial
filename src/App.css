@@ -3,16 +3,22 @@ body{
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
-    padding-top: 60px;
+    padding-top: 58px;
     line-height: 1.5;
     background-color: #f9f9f9;
 }
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4 {
     font-weight: 600;
     line-height: 1.5;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     color: #000;
+}
+h5,h6 {
+  font-weight: 600;
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+  color: #000;
 }
 h1, .h1 {font-size: 1.75em;}
 h2, .h2 {font-size: 1.7em;}
@@ -59,6 +65,12 @@ a {color: #444; text-decoration: none;  transition: 0.3s;}
     color: #000;
 } */
 
+h1.text-primary1{
+  color: #00356b;
+  font-size: 25px;
+  font-weight: 200;
+  text-transform: capitalize;
+}
 /*--------section header start---------*/
 
 .nav-link{color: #fff!important; font-size: 0.8em; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-weight: 600;}
@@ -129,7 +141,147 @@ input[type=number] {
   color:#fff
 }
 
+.childage-text{
+  color: #e0763a;
+}
 
+.available-dates{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dynamic-dates input {
+  display: none;
+}
+
+.dynamic-dates label div {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dynamic-dates label {
+  cursor: pointer;
+  width: 80px;
+  margin-right: 6px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px !important;
+  margin-left: 6px;
+  text-align: center;
+}
+
+*:focus{ outline: none;}
+
+.sdday {
+  color: #e0763a;
+}
+
+.sddate {
+  font-size: 18px;
+}
+
+.sdmonth {
+  color: orange;
+}
+
+.dynamic-dates input:checked ~ label {
+  background: #e5e5e642;
+  outline: none !important;
+  box-shadow: 0px 0px 1px 1px #01346b;
+  color: #01346b;
+  border: 1px solid #5f93e3;
+}
+
+.timeslotselect {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.timeslotdiv {
+  margin-bottom: 15px;
+  margin-right: 9px;
+}
+
+.timeslotdiv input {
+  display: none;
+}
+
+.timeslotdiv label {
+  background: #ffffff;
+  color: #01346b;
+  font-size: 14px !important;
+  padding: 5px 27px;
+  cursor: pointer;
+  border: 1px solid #58799d;
+  border-radius: 25px;
+}
+
+.timeslotdiv input:checked ~ label {
+  background: #01346b;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.selecteddate {
+  background: #01346b;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0px auto;
+  padding: 15px 15px;
+  border-radius: 10px;
+}
+
+.selecteddate div {
+  color: #fff;
+  width: 25%;
+  text-align: center;
+  border-right: 1px solid #fff;
+}
+
+.selecteddate div:last-child {
+  border-right: 0px;
+}
+
+.confirmstaus p {
+  font-size: 14px;
+  width: 70%;
+  text-align: center;
+  margin: 30px auto;
+  line-height: 20px;
+  color: #01346b;
+}
+
+.button-confirm-details {
+  font-weight: 500;
+  background-color: #e0763a;
+  border: none;
+  font-size: 14px;
+  border-radius: 25px;
+  padding: 10px 60px;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  margin: 0px auto;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  cursor: pointer;
+}
+
+.group-box {
+  box-shadow: 3px 3px 9px rgba(240, 213, 173, 0.15),  -2px -2px 9px rgba(240, 213, 173, 0.15)!important;
+}
+
+.group-box a{
+  text-decoration:none;
+}
 /*--------footer-area start---------*/
 /*--------footer-area end---------*/
 
