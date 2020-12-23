@@ -75,8 +75,8 @@ export const AllGroups = () => {
                   </div>
                   ) : (
                   <div className="alert alert-warning" role="alert">
-                      You haven't created any buckets. Kindly click on the 'Create
-                      Bucket' button in the navigation bar to create a Bucket.!
+                      You haven't created any Child Age Group. Kindly click on the 'Create
+                      a Group' button in the sidebar bar to create a Group.!
                   </div>
                   )}
         </div>
