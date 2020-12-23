@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.ced773c4.chunk.css",
-    "main.js": "/static/js/main.e2213e04.chunk.js",
-    "main.js.map": "/static/js/main.e2213e04.chunk.js.map",
+    "main.css": "/static/css/main.13348c4d.chunk.css",
+    "main.js": "/static/js/main.3e64d565.chunk.js",
+    "main.js.map": "/static/js/main.3e64d565.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b422a842.js",
     "runtime-main.js.map": "/static/js/runtime-main.b422a842.js.map",
     "static/js/2.6090bb2f.chunk.js": "/static/js/2.6090bb2f.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.7ca04701.chunk.js": "/static/js/3.7ca04701.chunk.js",
     "static/js/3.7ca04701.chunk.js.map": "/static/js/3.7ca04701.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.ced773c4.chunk.css.map": "/static/css/main.ced773c4.chunk.css.map",
+    "static/css/main.13348c4d.chunk.css.map": "/static/css/main.13348c4d.chunk.css.map",
     "static/js/2.6090bb2f.chunk.js.LICENSE.txt": "/static/js/2.6090bb2f.chunk.js.LICENSE.txt",
     "static/media/child3.8dd10deb.jpg": "/static/media/child3.8dd10deb.jpg",
     "static/media/child4.e8a5d479.jpg": "/static/media/child4.e8a5d479.jpg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.b422a842.js",
     "static/js/2.6090bb2f.chunk.js",
-    "static/css/main.ced773c4.chunk.css",
-    "static/js/main.e2213e04.chunk.js"
+    "static/css/main.13348c4d.chunk.css",
+    "static/js/main.3e64d565.chunk.js"
   ]
 }

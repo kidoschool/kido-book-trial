@@ -111,7 +111,7 @@ export const Group = (props) => {
                               </span>
                               <div className={style.deleteColumn}>
                               <i
-                                className="fas fa-trash-alt"
+                                className="text-danger fas fa-trash-alt"
                                 onClick={(e) => handleDatesDelete(item[0], e)}
                               ></i>
                             </div>

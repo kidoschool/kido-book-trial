@@ -40,7 +40,7 @@ class Schedule extends Component {
          
             
 
-
+                
             Axios.get(`https://kido-book-trial-default-rtdb.firebaseio.com/ageGroups/${dd.selectedChildage}/scheduleDates.json`)
             .then(response => {
                 console.log(response);
