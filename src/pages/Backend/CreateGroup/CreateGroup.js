@@ -59,13 +59,8 @@ const CreateBoard = (props) => {
                 <div className="col-md-10 col-lg-10">
                 {formIncompleteError ? <div class="alert alert-danger" role="alert">Kindly complete the form before adding the Group</div> : null}
                 <div className="create-group border bg-white p-4">
-                <h1 className="text-primary1">Create a Group</h1>
+                <h1 className="text-primary1">Create Group</h1>
                 <form onSubmit={addGroupToDBHandler}>
-                    {/* <div class="form-group">
-                        <label for="agegroup">Enter Child Age Group:</label>
-                        <input id="agegroup" type="text" class="form-control" name="agegroup" placeholder="eg 2Years-3Years"
-                        ref={AgeGroup}  onChange={(event) => setAgeGroup(event.target.value)}/>
-                    </div> */}
                     <div class="form-group">
                         <label for="agegroup">Enter Child Age Group:</label>
                         <select class="form-control" name="agegroup" id="agegroup" ref={AgeGroup} onChange={(event) => setAgeGroup(event.target.value)}>
