@@ -59,7 +59,9 @@ function LoginRegister(props) {
   (<button  type="submit" className="loginBtn btn btn-success" onClick={register} >Register</button>);
 
   let login_register = loginBtn ? 
-  (<button  className="loginBtn btn btn-primary float-right" onClick={() => getAction('reg')}>Register</button>) :
+  (
+    <button  className="loginBtn btn btn-primary float-right d-none" onClick={() => getAction('reg')}>Register</button>
+  ) :
   (<button  className="loginBtn btn btn-primary float-right" onClick={() => getAction('login')}>Login</button>);
 
   return(
