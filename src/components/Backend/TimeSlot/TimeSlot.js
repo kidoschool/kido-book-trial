@@ -58,6 +58,7 @@ function TimeSlot(props) {
     Axios
     .get(`https://kido-bookt-backend-default-rtdb.firebaseio.com/groupContents/${groupId}/scheduleDate/${scheduleDateId}/scheduleTime.json`)
     .then((response) => {
+      console.log(response);
         setCardData(response.data);
     })
     .catch((error) => console.log(error));

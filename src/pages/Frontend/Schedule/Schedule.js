@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import Moment from 'react-moment';
+import ScheduleTime from "../../../components/Frontend/ScheduleTime";
+import $ from "jquery";
+
 
 class Schedule extends Component {
+  
 
     constructor(props) {
         super(props);
@@ -9,13 +14,17 @@ class Schedule extends Component {
         this.state = {
             selectedChildage: '',
             scheduleDates: '',
-            ageGroups: {},
+            selectedSdate: '',
         }
+
+        // const name = props.match.params.ageGroup;
+        this.handleOnCheck = this.handleOnCheck.bind(this);
       }
 
 
         // Get Data from LocalStorage ..
         componentDidMount() {
+
             let dd  = this.childData = JSON.parse(localStorage.getItem('childdetails'));
     
             if (localStorage.getItem('childdetails')) {
@@ -28,44 +37,38 @@ class Schedule extends Component {
                 })
             }
 
-    
-            Axios.get('https://kido-book-trial-default-rtdb.firebaseio.com/ageGroups.json')
+                
+            Axios.get(`https://kido-bookt-backend-default-rtdb.firebaseio.com/groupContents/${this.props.location.state.groupId}/scheduleDate.json`)
             .then(response => {
                 // console.log(response);
-                this.setState({
-                    ageGroups: response.data
-                })
-            })
-                .catch(error => {console.log(error)});
-         
-            
-
-                
-            Axios.get(`https://kido-book-trial-default-rtdb.firebaseio.com/ageGroups/${dd.selectedChildage}/scheduleDates.json`)
-            .then(response => {
-                console.log(response);
                 this.setState({
                     scheduleDates: response.data
                 })
             })
                 .catch(error => {console.log(error)});
-         
+
+        }
+
+          //set value in localStorage
+            componentWillUpdate(nextProps, nextState) {
+                localStorage.setItem('childscheduledetails', JSON.stringify(nextState));
             }
-    
+
+
+            handleOnCheck(e){
+                this.setState({selectedSdate: e.target.value});
+                $("#selectedTime").empty();
+             }
 
     render() {
 
-        // let data = Object.entries(this.state.ageGroups).map((item) => {
-        //     return (
-        //         <>
-               
-        //         </>
-        //     )
-        // })
+
+        let dt  = JSON.parse(localStorage.getItem('childscheduledetails'));
+        const getdate = dt.selectedSdate;
+        
 
         return (
 
-          
             <section className="kids-schedule py-5">
             <div className="container">
                 <div className="row justify-content-center">
@@ -75,33 +78,41 @@ class Schedule extends Component {
                         <p>Select a Date</p>
                        
                             <div className="available-dates pb-4">
-                            {Object.entries(this.state.scheduleDates).map((item) => {
+                            {Object.entries(this.state.scheduleDates).map((item,k) => {
                                 return (
                                     <>
-                            <div className="dynamic-dates">
-                                <input type="radio" id="dateselect1" name="schedule_date"  className="inputdates" 
-                                value=""/>
-                                <label className="" htmlFor="dateselect1">
-                                    <div className="sdday">{item[0]}</div>
-                                    <div className="sddate">21</div>
-                                    <div className="sdmonth">Dec</div>
-                                </label>
-                            </div>
-                            </>
-                              )
-                            })}
+                                    <div className="dynamic-dates" key={item[0]} >
+                                        <input type="radio" id={item[0]} name="schedule_date" className="inputdates" 
+                                            value={item[1].date}
+                                            checked={this.state.selectedSdate === item[1].date}
+                                            onChange={this.handleOnCheck} 
+                                            />
+                                        <label value={item[1].date} className="" htmlFor={item[0]} >
+                                        <div className="sdmonth">
+                                            <Moment  format="ddd DD MMM">{item[1].date}</Moment>
+                                        </div>
+                                        </label>
+                                    </div>
+                                    </> 
+                                    )
+                                })
+                            }
                             </div>
 
-                            <p>Select a Time For <span className="childage-text"><b>Mon 11 Jan</b></span></p>
-
+                            <p>Select a Time For <span className="childage-text"><b>{this.state.selectedSdate ? (<Moment  format="ddd DD MMM">{this.state.selectedSdate}</Moment>):("Please select the date above.")}</b></span></p>
                             <div className="timeslotselect">
-                            {Object.entries(this.state.ageGroups).map((item) => {
+                            {Object.entries(this.state.scheduleDates).map((item,k) => {
                                 return (
-                                <>			
-                                <div className="timeslotdiv">
-                                    <input type="radio" required="" className="timeslotinput" name="schedule_time" id="timdateslot1" value="10:30" data-time="10:30 AM"/>
-                                    <label htmlFor="timdateslot1"></label>
-                                </div>
+                                <>
+                                  {item[1].date == getdate ? (			
+                                    <ScheduleTime
+                                        scheduleDateId={item[0]}
+                                        groupId={this.props.location.state.groupId}>
+                                    </ScheduleTime>
+                                     ) : (
+                                         ""
+                                        // <span className="text-primary">Please select the date above to view available time slots</span>
+                                    )}
                                 </>
                                 )
                             })}
@@ -109,10 +120,7 @@ class Schedule extends Component {
                            
 
                         <div className="selecteddate mt-3">
-							<div className="select-day"><small>Monday</small></div>
-							<div className="select-date"><small>11th</small></div>
-							<div className="select-month"><small>January</small></div>
-							<div className="select-time"><small>04:30 PM</small></div>
+                        {this.state.selectedSdate ? (<div className="select-day"><small><Moment  format="dddd DD MMMM">{this.state.selectedSdate}</Moment></small>&emsp;<small id="selectedTime"></small></div>):(<span className="text-white">Please select the date above</span>)}
 						</div>
 
                         <div className="confirmstaus">

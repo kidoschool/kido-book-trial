@@ -1,10 +1,52 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
+import Axios from 'axios';
 
 
 class SelectSchool extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            // selectedChildage: '',
+            groupContents: {},
+        }
+        
+      }
+
+        // Get Data from LocalStorage ..
+        componentDidMount() {
+
+            let dd  = this.childData = JSON.parse(localStorage.getItem('childdetails'));
+    
+            if (localStorage.getItem('childdetails')) {
+                this.setState({
+                    selectedChildage: this.childData.selectedChildage
+                })
+            } else {
+                this.setState({
+                    selectedChildage: ''
+                })
+            }
+
+    
+            Axios.get('https://kido-bookt-backend-default-rtdb.firebaseio.com/groupContents.json')
+            .then(response => {
+                // console.log(response);
+                this.setState({
+                    groupContents: response.data
+                })
+            })
+                .catch(error => {console.log(error)});
+         
+         
+            }
+
     render() {
+        let dd  = JSON.parse(localStorage.getItem('childdetails'));
+        const isLoggedIn = dd.selectedChildage;
+
         return (
 
             <div className="step3">
@@ -27,9 +69,24 @@ class SelectSchool extends Component {
                             </ul>
                         </div>
                         </div>
-                        <div className="card-footer text-center">
-                        <Link className="btn btn-primary1 btn-sm" to="/schedule">Book Now</Link>
-                        </div>
+                        {Object.entries(this.state.groupContents).map((item) => (
+                        <>
+                        {item[1].ageGroup == isLoggedIn ? (
+                                <div className="card-footer text-center" key={item[1].ageGroup}>
+                                <Link className="btn btn-primary1 btn-sm"
+                                    to={{
+                                        pathname: "/schedule/" + item[1].ageGroup,
+                                        state: {
+                                            groupId: item[0],
+                                        },
+                                        }}
+                                >Book Now</Link>
+                                </div>
+                            ) : (
+                                ""
+                            )}
+                        </>
+                        ))}
                     </div>
                     <div className="card virtual">
                         <div className="bg-success text-center p-5"><h4 className="text-white">The Virtual Preschool  @ ₹ 4000 for the first month (50% off)</h4></div>

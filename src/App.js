@@ -19,7 +19,7 @@ function App() {
       <Header />
         <Switch>
           <Route exact path="/"  component={Home} />
-          <Route path='/schedule' component={Schedule} />
+          <Route path='/schedule/:ageGroup' component={Schedule} />
         </Switch>
       <Footer />
     </Router>
