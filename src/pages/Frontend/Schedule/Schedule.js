@@ -21,7 +21,6 @@ class Schedule extends Component {
         this.handleOnCheck = this.handleOnCheck.bind(this);
       }
 
-
         // Get Data from LocalStorage ..
         componentDidMount() {
 
@@ -48,24 +47,24 @@ class Schedule extends Component {
                 .catch(error => {console.log(error)});
 
         }
-
-          //set value in localStorage
-            componentWillUpdate(nextProps, nextState) {
-                localStorage.setItem('childscheduledetails', JSON.stringify(nextState));
-            }
-
+          
 
             handleOnCheck(e){
                 this.setState({selectedSdate: e.target.value});
                 $("#selectedTime").empty();
              }
 
+
+                //set value in localStorage
+            componentWillUpdate(nextProps, nextState) {
+                localStorage.setItem('childscheduledetails', JSON.stringify(nextState));
+            }
+
+
     render() {
 
-
         let dt  = JSON.parse(localStorage.getItem('childscheduledetails'));
-        const getdate = dt.selectedSdate;
-        
+        // const getdate = dt.selectedChildage;
 
         return (
 
@@ -102,7 +101,7 @@ class Schedule extends Component {
                             {Object.entries(this.state.scheduleDates).map((item,k) => {
                                 return (
                                 <div className="d-flex"  key={item[0]}>
-                                  {item[1].date === getdate ? (			
+                                  {item[1].date === dt.selectedSdate ? (			
                                     <ScheduleTime
                                         scheduleDateId={item[0]}
                                         groupId={this.props.location.state.groupId}>
