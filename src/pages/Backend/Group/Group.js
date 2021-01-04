@@ -7,6 +7,7 @@ import AddScheduleDate from "../../../components/Backend/AddScheduleDate/AddSche
 import TimeSlot from "../../../components/Backend/TimeSlot/TimeSlot";
 import { AuthContext } from '../../../context/Auth';
 import Sidebar from "../../../components/Backend/Sidebar/Sidebar";
+import Moment from 'react-moment';
 
 export const Group = (props) => {
     const { currentUser } = useContext(AuthContext);
@@ -77,7 +78,7 @@ export const Group = (props) => {
           ) : (
             <div className="wrapper d-flex align-items-stretch">
             <Sidebar />
-              <div className="container">
+              <div className="container pb-4">
                   <div className={style.ColumnHeader}>
                     <div className={style.ColumnTitle}>
                         <h1 className="text-primary1 pb-1">{name}</h1>
@@ -107,7 +108,7 @@ export const Group = (props) => {
                           <div className={style.ColumnCard} key={item[0]}>
                             <div className={style.ColumnCardHead}>
                               <span className={style.ColumnNames}>
-                                {item[1].date}
+                              <Moment  format="ddd DD MMM">{item[1].date}</Moment>
                               </span>
                               <div className={style.deleteColumn}>
                               <i

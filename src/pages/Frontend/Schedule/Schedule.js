@@ -25,7 +25,7 @@ class Schedule extends Component {
         // Get Data from LocalStorage ..
         componentDidMount() {
 
-            let dd  = this.childData = JSON.parse(localStorage.getItem('childdetails'));
+            this.childData = JSON.parse(localStorage.getItem('childdetails'));
     
             if (localStorage.getItem('childdetails')) {
                 this.setState({
@@ -80,7 +80,6 @@ class Schedule extends Component {
                             <div className="available-dates pb-4">
                             {Object.entries(this.state.scheduleDates).map((item,k) => {
                                 return (
-                                    <>
                                     <div className="dynamic-dates" key={item[0]} >
                                         <input type="radio" id={item[0]} name="schedule_date" className="inputdates" 
                                             value={item[1].date}
@@ -93,7 +92,6 @@ class Schedule extends Component {
                                         </div>
                                         </label>
                                     </div>
-                                    </> 
                                     )
                                 })
                             }
@@ -103,17 +101,16 @@ class Schedule extends Component {
                             <div className="timeslotselect">
                             {Object.entries(this.state.scheduleDates).map((item,k) => {
                                 return (
-                                <>
-                                  {item[1].date == getdate ? (			
+                                <div className="d-flex"  key={item[0]}>
+                                  {item[1].date === getdate ? (			
                                     <ScheduleTime
                                         scheduleDateId={item[0]}
                                         groupId={this.props.location.state.groupId}>
                                     </ScheduleTime>
                                      ) : (
                                          ""
-                                        // <span className="text-primary">Please select the date above to view available time slots</span>
                                     )}
-                                </>
+                                </div>
                                 )
                             })}
                             </div>

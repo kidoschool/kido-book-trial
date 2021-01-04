@@ -5,7 +5,8 @@
     background-position: center center; }
   
   .wrapper {
-    width: 100%; }
+    width: 100%; 
+  }
   
   #sidebar {
     min-width: 300px;
@@ -16,7 +17,8 @@
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
-    position: relative; }
+    position: relative; 
+  }
   
     #sidebar .h6 {
       color: #fff; }

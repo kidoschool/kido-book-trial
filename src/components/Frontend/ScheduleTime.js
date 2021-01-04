@@ -51,7 +51,6 @@ class ScheduleTime extends Component {
             <>
             {Object.entries(this.state.schTime).map((item) => {
                 return (
-                <>
              <div className="timeslotdiv" key={item[0]}>
                 <input type="radio" required="" className="timeslotinput" name="schedule_time" id={item[0]} 
                     value={item[1].timeSlot}
@@ -59,7 +58,6 @@ class ScheduleTime extends Component {
                     onChange={this.handleOnCheck}/>
                  <label onClick={this.timeSlotClick} htmlFor={item[0]}>{item[1].timeSlot}</label>
             </div>
-            </>
              )
             }
             )}

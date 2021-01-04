@@ -3,6 +3,7 @@ import style from "./TimeSlot.module.css";
 import Modal from '../../../common/Modal/Modal';
 import Axios from "axios";
 import { AuthContext } from '../../../context/Auth';
+import $ from "jquery";
 
 function TimeSlot(props) {
   const { currentUser } = useContext(AuthContext);
@@ -152,6 +153,8 @@ function TimeSlot(props) {
   };
 
 
+
+
   const  modalCloseHandler = () => { setShowModal(false);setEditDetails(false);};
 
   const  showmodalCloseHandler = () => {setShowDetails(false)};
@@ -169,8 +172,8 @@ function TimeSlot(props) {
           {formIncompleteError ? <p style={{color : 'red'}}>Kindly complete the form before adding Time</p> : null}
         <div className="form-group">
           <label htmlFor="timeslot">Enter a Time slot for your Schedule date:</label>
-          <input type="text" id="title" defaultValue={editDetails ? cardTimeSlot : ""} 
-          placeholder="e.g. Add a new icon" ref={cardTimeSlots} 
+          <input type="text" id="timepicker" defaultValue={editDetails ? cardTimeSlot : ""} 
+          placeholder="e.g. Add Time Slot" ref={cardTimeSlots} 
           onChange={(e) => SetTimeSlot(e.target.value)} className="form-control"/>
         </div> 
         <div className="form-group">

@@ -70,9 +70,9 @@ class SelectSchool extends Component {
                         </div>
                         </div>
                         {Object.entries(this.state.groupContents).map((item) => (
-                        <>
+                        <div key={item[1].ageGroup}>
                         {item[1].ageGroup == isLoggedIn ? (
-                                <div className="card-footer text-center" key={item[1].ageGroup}>
+                                <div className="card-footer text-center" >
                                 <Link className="btn btn-primary1 btn-sm"
                                     to={{
                                         pathname: "/schedule/" + item[1].ageGroup,
@@ -85,7 +85,7 @@ class SelectSchool extends Component {
                             ) : (
                                 ""
                             )}
-                        </>
+                        </div>
                         ))}
                     </div>
                     <div className="card virtual">
