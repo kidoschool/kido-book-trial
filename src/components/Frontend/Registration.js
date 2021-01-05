@@ -25,8 +25,13 @@ class Registration extends Component {
             childfname: '',
             childlname: '',
             selectedChildage: false,
-            dateofbirth: '',
+            birthdate: '',
+            birthmonth: '',
+            birthyear: '',
             dateofbirthError: '',
+            monthofbirthError: '',
+            yearofbirthError: '',
+
 
             selectedLearning: false,
 
@@ -49,6 +54,8 @@ class Registration extends Component {
             phoneError: '',
 
             dateofbirthError: '',
+            monthofbirthError: '',
+            yearofbirthError: '',
 
             selectedLearningError: '',
         
@@ -75,9 +82,23 @@ class Registration extends Component {
         }
 
         if(this.state.step > 1){
-            if(this.state.dateofbirth.length < 1){
+            if(this.state.birthdate.length <=0){
                 isError = true;
-                errors.dateofbirthError = 'Plese Select Proper Date of Birth';
+                errors.dateofbirthError = 'Plese Select Date';
+            }
+        }
+
+        if(this.state.step > 1){
+            if(this.state.birthmonth.length <=0){
+                isError = true;
+                errors.monthofbirthError = 'Plese Select Month';
+            }
+        }
+
+        if(this.state.step > 1){
+            if(this.state.birthyear.length <=0){
+                isError = true;
+                errors.yearofbirthError = 'Plese Select Year';
             }
         }
 
@@ -109,6 +130,8 @@ class Registration extends Component {
                 emailError: '',
 
                 dateofbirthError: '',
+                monthofbirthError: '',
+                yearofbirthError: '',
 
                 selectedLearningError: '',
 
@@ -166,8 +189,12 @@ class Registration extends Component {
                    childfname={this.state.childfname}
                    childlname={this.state.childlname}
                    selectedChildage={this.state.selectedChildage}
-                   dateofbirth={this.state.dateofbirth}
+                   birthdate={this.state.birthdate}
+                   birthmonth={this.state.birthmonth}
+                   birthyear={this.state.birthyear}
                    dateofbirthError={this.state.dateofbirthError}
+                   monthofbirthError={this.state.monthofbirthError}
+                   yearofbirthError={this.state.yearofbirthError}
                    onChange={this.handleOnChange.bind(this)}
                    onCheck={this.handleOnCheck.bind(this)}
                    next={this.next.bind(this)}

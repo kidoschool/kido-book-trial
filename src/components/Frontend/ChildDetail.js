@@ -6,30 +6,33 @@ import child4 from '../../assets/child4.jpg';
 import child5 from '../../assets/child5.jpg';
 import $ from "jquery";
 
-
 class ChildDetail extends Component {
     
 
     componentDidMount() {
         
+     
         $('#next1').click(function () {
+            if($('input[name="childfname"]').val().length === 0){
+                alert("Child first name is required");
+                return false;
+            }
+            if($('input[name="childlname"]').val().length === 0){
+                alert("Child last name is required");
+                return false;
+            }
             $('.next-1').css("visibility","hidden");
-        });
-
-        $('#next2').click(function () {
-            $('.next-2').css("visibility","hidden");
-        });
-
-
-        $('#next1').click(function () {
-            
             $('#back1').css("visibility","hidden");
             $('html, body').animate({ scrollTop: $(document).height() }, 500);
             
         });
 
         $('#next2').click(function () {
-            
+            if($('input[name="exampleRadios"]:checked').length === 0){
+                alert("Please select age group of your child");
+                return false;
+            }
+            $('.next-2').css("visibility","hidden");
             $('#back2').css("visibility","hidden");
             $('html, body').animate({ scrollTop: $(document).height() }, 500);
             
@@ -47,19 +50,19 @@ class ChildDetail extends Component {
             <h1 className="py-3">Let’s get to know your child</h1>
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label htmlFor="childfname">First Name</label>
+                        <label htmlFor="childfname">Child First Name</label>
                         <input type="text" className="form-control" id="childfname" name="childfname" 
                         value={this.props.childfname}
                         onChange={this.props.onChange} 
-                        placeholder="Enter Your First Name"/>
+                        placeholder="Enter Child First Name"/>
                         <span className="text-danger"><small>{this.props.childfnameError}</small></span>
                     </div>
                     <div className="form-group col-md-6">
-                        <label htmlFor="childlname">Last Name</label>
+                        <label htmlFor="childlname">Child Last Name</label>
                         <input type="text" className="form-control" id="childlname" name="childlname" 
                         value={this.props.childlname} 
                         onChange={this.props.onChange} 
-                        placeholder="Enter Your Last Name"/>
+                        placeholder="Enter Child Last Name"/>
                         <span className="text-danger"><small>{this.props.childlnameError}</small></span>
                     </div>
                 </div>
@@ -144,18 +147,77 @@ class ChildDetail extends Component {
                     </div>
                 </div>
 
-                
-
                 <div className="collapse pt-4" id="collapseExample1">
                 <div className="d-flex"><h2>When is <span>{this.props.childfname}</span>’s birthday</h2><i className="birth-date pl-4 fas fa-birthday-cake"></i></div>
                 <div className="form-row">
                     <div className="form-group col-md-8">
                     <label htmlFor="childfname">Enter <span>{this.props.childfname}</span>’s Birthdate</label>
-                    <input type="date" id="dateofbirth" name="dateofbirth" className="form-control"
-                     value={this.props.dateofbirth} 
-                     onChange={this.props.onChange}/>
-                    {/* <input className="form-control start_date" type="text" placeholder="start date" id="startdate_datepicker"></input> */}
-                    <small className="text-danger">{this.props.dateofbirthError}</small>
+                     <div className="input-group">
+                        <select className="form-control" id="birthdate" 
+                        value={this.props.birthdate} onChange={this.props.onChange}>
+                            <option value="">Birth Date</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                        <select className="form-control" id="birthmonth"
+                        value={this.props.birthmonth} onChange={this.props.onChange}>
+                            <option value="">Birth Month</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                        <select className="form-control" id="birthyear"
+                        value={this.props.birthyear} onChange={this.props.onChange}>
+                            <option value="">Birth Year</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                        </select>
+                    </div>
+                    <small className="text-danger px-2">{this.props.dateofbirthError}</small>
+                    <small className="text-danger px-2">{this.props.monthofbirthError}</small>
+                    <small className="text-danger px-2">{this.props.yearofbirthError}</small>
                     </div>
                 </div>
                 <div className="d-flex justify-content-between">
@@ -163,7 +225,6 @@ class ChildDetail extends Component {
                 <button type="submit" onClick={this.props.next} className="btn btn-primary">Submit</button>
                 </div>
                 </div>
-             
             </div>
         </div>
         </section>

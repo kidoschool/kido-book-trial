@@ -125,7 +125,7 @@ class Schedule extends Component {
 
                         <div className="form-group">
 							<button className="btn button-confirm-details trialBtn" type="submit" name="submit">
-								Confirm Trial className
+								Confirm Trial Class
 							</button>
 						</div>
                     </div>

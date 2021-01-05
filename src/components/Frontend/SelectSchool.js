@@ -61,7 +61,7 @@ class SelectSchool extends Component {
                         <div className="card-body">
                         <div className="card-text">
                             <ul>
-                                <li>Experience the power of Kido Home through free trial classNamees for an entire week - <strong>2 Years To 6 Years</strong></li>
+                                <li>Experience the power of Kido Home through free trial classNames for an entire week - <strong>2 Years To 6 Years</strong></li>
                                 <li>Trial classNamees are 50-60 minutes</li>
                                 <li>Batches are held in small groups</li>
                                 <li>Absolutely free and with no obligations.</li>
