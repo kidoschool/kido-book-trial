@@ -15,7 +15,7 @@ class ParentDetail extends Component {
                                     <input type="text" className="form-control" id="parentfname" name="parentfname" 
                                     value={this.props.parentfname} 
                                     onChange={this.props.onChange} 
-                                    placeholder="Enter Your First Name"/>
+                                    placeholder="Enter your first name"/>
                                     <span className="text-danger"><small>{this.props.parentfnameError}</small></span>
                                 </div>
                                 <div className="form-group col-md-6">
@@ -23,7 +23,7 @@ class ParentDetail extends Component {
                                     <input type="text" className="form-control" id="parentlname" name="parentlname" 
                                     value={this.props.parentlname} 
                                     onChange={this.props.onChange} 
-                                    placeholder="Enter Your Last Name"/>
+                                    placeholder="Enter your last name"/>
                                     <span className="text-danger"><small>{this.props.parentlnameError}</small></span>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@ class ParentDetail extends Component {
                                     <input type="number" className="form-control" id="phone" name="phone" 
                                     value={this.props.phone} 
                                     onChange={this.props.onChange} 
-                                    placeholder="Enter Your Phone Number"/>
+                                    placeholder="Enter your phone number"/>
                                     <span className="text-danger"><small>{this.props.phoneError}</small></span>
                                 </div>
                                 <div className="form-group col-md-6">
@@ -41,7 +41,7 @@ class ParentDetail extends Component {
                                     <input type="email" className="form-control" id="email" name="email" 
                                     value={this.props.email} 
                                     onChange={this.props.onChange} 
-                                    placeholder="Enter Your Email Address"/>
+                                    placeholder="Enter your email address"/>
                                     <span className="text-danger"><small>{this.props.emailError}</small></span>
                                 </div>
                             </div>

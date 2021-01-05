@@ -52,7 +52,7 @@ class SelectSchool extends Component {
             <div className="step3">
             <div className="card col-lg-12">
                 <div className="card-body">
-                <h1 className="py-3">Select Now the best learning option for <span>{this.props.childfname}</span></h1>
+                <h1 className="py-3">Select the best learning option for <span>{this.props.childfname}</span></h1>
                 <div className="form-row">
                 <div className="form-group col-md-12">
                 <div className="card-deck">

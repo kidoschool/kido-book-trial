@@ -54,7 +54,7 @@ class ChildDetail extends Component {
                         <input type="text" className="form-control" id="childfname" name="childfname" 
                         value={this.props.childfname}
                         onChange={this.props.onChange} 
-                        placeholder="Enter Child First Name"/>
+                        placeholder="Enter child first name"/>
                         <span className="text-danger"><small>{this.props.childfnameError}</small></span>
                     </div>
                     <div className="form-group col-md-6">
@@ -62,7 +62,7 @@ class ChildDetail extends Component {
                         <input type="text" className="form-control" id="childlname" name="childlname" 
                         value={this.props.childlname} 
                         onChange={this.props.onChange} 
-                        placeholder="Enter Child Last Name"/>
+                        placeholder="Enter child last name"/>
                         <span className="text-danger"><small>{this.props.childlnameError}</small></span>
                     </div>
                 </div>
@@ -207,6 +207,7 @@ class ChildDetail extends Component {
                         <select className="form-control" id="birthyear"
                         value={this.props.birthyear} onChange={this.props.onChange}>
                             <option value="">Birth Year</option>
+                            <option>2014</option>
                             <option>2015</option>
                             <option>2016</option>
                             <option>2018</option>
